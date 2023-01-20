@@ -17,6 +17,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
+        fontFamily: 'QuickSand',
+        appBarTheme: const AppBarTheme(
+            titleTextStyle: TextStyle(
+          fontFamily: 'OpenSans',
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        )),
       ),
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(),
@@ -35,30 +42,30 @@ class _MyHomePageState extends State<MyHomePage> {
   // late String titleInput;
 
   final List<Transaction> _userTransaction = [
-    Transaction(
-      id: 't1',
-      title: 'new shoes',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'new ball',
-      amount: 19.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'new pen',
-      amount: 11.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't4',
-      title: 'new T-shirt',
-      amount: 99.99,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: 't1',
+    //   title: 'new shoes',
+    //   amount: 69.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'new ball',
+    //   amount: 19.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't3',
+    //   title: 'new pen',
+    //   amount: 11.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't4',
+    //   title: 'new T-shirt',
+    //   amount: 99.99,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
@@ -93,7 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Expenses'),
+        title: const Text(
+          'Personal Expenses',
+        ),
         actions: [
           IconButton(
             onPressed: () => _startAddNewTransaction(context),
