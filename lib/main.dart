@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_app/widgets/user_transaction.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -18,14 +20,17 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
+  // late String titleInput;
+  // late String amountInput;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter App'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+      appBar: AppBar(
+        title: const Text('Flutter App'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
             SizedBox(
@@ -36,11 +41,10 @@ class MyHomePage extends StatelessWidget {
                 child: Text('chart'),
               ),
             ),
-            Card(
-              color: Colors.orange,
-              child: Text('list of tx'),
-            ),
+            UserTransactions(),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
